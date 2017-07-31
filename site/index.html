@@ -1,0 +1,56 @@
+<html>
+<head>
+    <!--
+    This is the library that provides websocket streaming pub/sub
+    The dev serverver is serving the html and javascript, but it also provides updating fx data on /fx/prices.
+     -->
+    <script src="stomp.js"></script>
+    <script src="sparkline.js"></script>
+    <script src="script.js"></script>
+    <script src="sort.js"></script>
+</head>
+<body>
+
+<!-- This is a description of what you should do for this task.  You can remove it for your answer -->
+<section class="content">
+  <p id="stomp-status"></p>
+  <h1>Updated Table</h1>
+  <p>By Default table is in Ascending Order</p>
+  <table border="1" id="myTable">
+  <tr>
+   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+    <th id="name">Name of Currency</th>
+    <th id="bestBid">Current Best bid price</th>
+    <th id="bestAsk">Current Best ask price</th>
+    <th onclick="changeDirection()" id="lastChangeBid">Best bid last changed(Click Here to change the direction)</th>
+    <th id="lastChangeAsk">Best ask price last changed</th>
+    <th id="sparkline">Sparkline Graph</th>
+  </tr>
+
+
+</table>
+
+</section>
+<div class="note">
+  <b>Short Note:</b>
+  <p>we don't know how many no. of currency pairs are there. so I decided to keep it dynamic table.</p>
+
+  <p>The approach I used updating table with most recent value and then calling sortTable method
+    <br>for sparkline, I have taken 10 most recent values and updating them it on sparkline graph.
+    I decided to limit the the sparkline values upto 10 values.
+    so most recent 10 values it shows by 30 seconds interval.
+  </p>
+
+  For Any <b>Query</b> you can contact on my Mail Id:
+  <a href="javascript: window.location.href='mailto:mail@example.org'">sachinpatildhotri@gmail.com</a>
+
+
+</div>
+
+<!-- Code you write in index.js and anything it depends on will be bundled into bundle.js and
+     is included here -->
+<script src="bundle.js"></script>
+
+
+</body>
+</html>
